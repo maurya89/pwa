@@ -6,12 +6,5 @@ window.onload = () => {
     }).catch(function (err) {
       console.warn('Error whilst registering service worker', err);
     });
-
-    navigator.serviceWorker.getRegistrations().then(function (registrations) {
-      for (let registration of registrations) {
-        console.log("Hello");
-        registration.update()
-      }
-    })
   }
 }
