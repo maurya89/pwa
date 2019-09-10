@@ -46,6 +46,7 @@ self.addEventListener('fetch', function (event) {
 
 
 function update(request) {
+  console.log("Hellooooooooo")
   return caches.open(cacheName).then(function (cache) {
     return fetch(request).then(function (response) {
       return cache.put(request, response.clone()).then(function () {
