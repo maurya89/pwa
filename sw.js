@@ -38,7 +38,7 @@ self.addEventListener('fetch', function (event) {
   );
 
   event.waitUntil(
-    update(evt.request)
+    update(event.request)
     .then(refresh)
   );
 });
@@ -46,7 +46,6 @@ self.addEventListener('fetch', function (event) {
 
 
 function update(request) {
-  console.log("Hellooooooooo")
   return caches.open(cacheName).then(function (cache) {
     return fetch(request).then(function (response) {
       return cache.put(request, response.clone()).then(function () {
