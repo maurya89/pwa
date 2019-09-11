@@ -39,7 +39,6 @@ self.addEventListener('fetch', function (event) {
 
   event.waitUntil(
     update(event.request)
-    .then(refresh)
   );
 });
 
